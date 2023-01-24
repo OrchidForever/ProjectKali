@@ -1,13 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
+import { useLocalStorage } from 'usehooks-ts'
 import './App.css';
 
 function App() {
+  const [isDarkTheme, setDarkTheme] = useLocalStorage('darkTheme', true);
+  const toggleTheme = () => {
+    setDarkTheme((prevValue: boolean) => !prevValue)
+  }
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline text-red-600">
-      Simple React Typescript Tailwind Sample
-    </h1>
+      <button onClick={toggleTheme}>
+      {`The current theme is ${isDarkTheme ? `dark` : `light`}`}
+    </button>
     </div>
   );
 }
