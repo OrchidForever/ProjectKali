@@ -1,6 +1,8 @@
 {
   "name": "project-kali",
+  "author": "Kai <orchidwrites@gmail.com> (https://github.com/OrchidForever)",
   "version": "0.1.0",
+  "license": "GPL-3.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
