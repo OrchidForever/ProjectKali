@@ -1,0 +1,10 @@
+{
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "html.format.indentInnerHtml": true,
+    "html.format.indentHandlebars": true,
+    "javascript.format.semicolons": "remove",
+    "typescript.format.enable": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
