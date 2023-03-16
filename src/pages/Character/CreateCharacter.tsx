@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../../index.css'
 import { folk } from '../../types/folk'
-import { Select, Option, Input } from '@material-tailwind/react'
+import { Input, Radio, Typography } from '@material-tailwind/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useNavigate } from 'react-router-dom'
 
@@ -12,7 +12,7 @@ function CreateCharacter() {
   )
   const [character, setCharacter] = useState({
     name: '',
-    folk: 0
+    folk: '1',
   })
   const navigate = useNavigate()
 
@@ -22,12 +22,12 @@ function CreateCharacter() {
   ): void => {
     setCharacter({
       ...character,
-      [field]: value
+      [field]: value,
     })
   }
 
   const handleSave = () => {
-    const c = (playerCharacters.length === 0) ? [] : JSON.parse(playerCharacters)
+    const c = playerCharacters.length === 0 ? [] : JSON.parse(playerCharacters)
     const v = [...c, character]
     setPlayerCharacters(JSON.stringify(v))
     navigate('/', { replace: true })
@@ -71,24 +71,29 @@ function CreateCharacter() {
             <h2 className="max-w-sm mx-auto md:w-1/3">Personal info</h2>
             <div className="max-w-sm mx-auto space-y-5 md:w-2/3">
               <div>
-                <div className="relative py-2 flex-1">
-                  <Select
-                    onChange={(v) => {
-                      handleInputChange('folk', v)
-                    }}
-                    label="Folk"
-                    color="deep-purple"
-                    size="lg"
-                  >
-                    {folk.map((f, i) => (
-                      <Option value={f.id.toString()} key={i}>
-                        {f.name}{' '}
-                        <span className="text-gray-600 pl-2 italic text-xs">
-                          ({f.otherName})
-                        </span>
-                      </Option>
-                    ))}
-                  </Select>
+                <div className="relative py-2 flex w-max gap-4">
+                  {folk.map((f, i) => (
+                    <Radio
+                      id={f.id}
+                      name="folk"
+                      value={f.id}
+                      key={i}
+                      label={
+                        <Typography>
+                          {f.name}{' '}
+                          <span>
+                            <em>({f.otherName})</em>
+                          </span>
+                        </Typography>
+                      }
+                      color="deep-purple"
+                      defaultChecked={f.id === '1'}
+                      onChange={(v) => {
+                        console.log(v.currentTarget.value)
+                        handleInputChange('folk', v.currentTarget.value)
+                      }}
+                    />
+                  ))}
                 </div>
               </div>
 
