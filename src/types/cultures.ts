@@ -1,3 +1,31 @@
+interface subculture {
+  id: string
+  name: string
+  description: string
+  languageBonus: string[]
+  objectBonus: string[]
+}
+
+interface lineage {
+  id: string
+  name: string
+  description: string
+}
+
+export interface cultureObject {
+  id: string
+  name: string
+  honorifics?: string
+  naming?: string
+  exampleNames?: string
+  keepInMind?: string
+  startingObjects?: string[]
+  startingObjectPick?: number
+  subcultures: subculture[]
+  lineage?: lineage[]
+  socialStanding?: string[]
+}
+
 export const culture = [
   {
     id: '1',
@@ -90,21 +118,80 @@ export const culture = [
         objectBonus: [],
       },
     ],
+    lineage: [
+      {
+        id: '1',
+        name: 'Warrior Lineage.',
+        description:
+          'You come from a family of warriors faithful to the Rajahnate, who treat the new Hari as a close family friend and have pledged blood compacts with. Your tattoos sing of your courage and prowess.',
+      },
+      {
+        id: '2',
+        name: 'Merchant Nobility',
+        description:
+          "You come from a family of rich merchant princes who have traveled as far as the distant lands of Baik Hu, and perhaps have enterprises in Jamiyun Kulisa's Arrows.",
+      },
+      {
+        id: '3',
+        name: 'Tattoo Artists',
+        description:
+          "You come from a long line of tattoo artist professionals, or mamamatuk. You inscribe stories and traditions upon skin. Outsiders of the Sword Isles see that they didn't practice painting on paper, but that is because the islanders paint upon living canvas.",
+      },
+      {
+        id: '4',
+        name: 'Singers',
+        description:
+          'You come from a family of professional singers, who sing both epics and traditions, both glories and dirges.',
+      },
+      {
+        id: '5',
+        name: 'Traveler',
+        description:
+          ' You come from a family of skilled travelers, who ventured from isle to isle selling wares or offering their services. A very uncommon lineage in the isles, but they are more than happy to offer their barges to those that need it and can offer to pay. ',
+      },
+      {
+        id: '6',
+        name: 'Sensitives',
+        description:
+          "You come from a family touched by the spirits of the world, the diwata, and are inherently in tune with Diwa, the world's Strike. Your parents might have been the balyan (shamans) that channeled and performed concordance with the greater beings of nature.",
+      },
+      {
+        id: '7',
+        name: 'Adopted',
+        description:
+          "You were adopted into a family of courtesans and singers instead of warriors. You've never known your real family",
+      },
+      {
+        id: '8',
+        name: 'Tiger-Blooded',
+        description:
+          'You are a scion of the legendary tiger blood of Raja Batara Ambasi, and you might be eligible to take the Dawn Eater Crown. You are born deep into the courtly intrigues and intersettlement politics of Gatusan.',
+      },
+    ],
+    socialStanding: [],
   },
   {
     id: '2',
     name: 'Apumbukid',
+    naming: '',
+    subcultures: [],
   },
   {
     id: '3',
     name: 'Akai',
+    naming: '',
+    subcultures: [],
   },
   {
     id: '4',
     name: 'Virbanwan',
+    naming: '',
+    subcultures: [],
   },
   {
     id: '5',
     name: 'Ba-e',
+    naming: '',
+    subcultures: [],
   },
 ]

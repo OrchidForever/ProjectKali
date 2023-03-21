@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import '../../index.css'
-import { folk } from '../../types/folk'
-import { Input, Radio, Typography } from '@material-tailwind/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useNavigate } from 'react-router-dom'
+import ChooseFolk from '../../components/ChooseFolk'
+import ChooseCulture from '../../components/ChooseCulture'
 
 function CreateCharacter() {
   const [playerCharacters, setPlayerCharacters] = useLocalStorage(
@@ -13,11 +13,15 @@ function CreateCharacter() {
   const [character, setCharacter] = useState({
     name: '',
     folk: '1',
+    culture: '',
+    subculture: '',
+    languages: [],
+    objects: [],
   })
   const navigate = useNavigate()
 
   const handleInputChange = (
-    field: keyof typeof character,
+    field: string,
     value: string | number | undefined
   ): void => {
     setCharacter({
@@ -51,63 +55,9 @@ function CreateCharacter() {
           </div>
         </div>
         <div className="space-y-6 bg-white">
-          <div className="items-center w-full p-4 space-y-4 text-gray-500 md:inline-flex md:space-y-0">
-            <h2 className="max-w-sm mx-auto md:w-1/3">Character Name</h2>
-            <div className="max-w-sm mx-auto md:w-2/3">
-              <div className=" relative ">
-                <Input
-                  onInput={(v) => {
-                    handleInputChange('name', v.currentTarget.value)
-                  }}
-                  color="deep-purple"
-                  size="lg"
-                  label="Name"
-                />
-              </div>
-            </div>
-          </div>
+          <ChooseFolk setFolk={handleInputChange} />
           <hr />
-          <div className="items-center w-full p-4 space-y-4 text-gray-500 md:inline-flex md:space-y-0">
-            <h2 className="max-w-sm mx-auto md:w-1/3">Personal info</h2>
-            <div className="max-w-sm mx-auto space-y-5 md:w-2/3">
-              <div>
-                <div className="relative py-2 flex w-max gap-4">
-                  {folk.map((f, i) => (
-                    <Radio
-                      id={f.id}
-                      name="folk"
-                      value={f.id}
-                      key={i}
-                      label={
-                        <Typography>
-                          {f.name}{' '}
-                          <span>
-                            <em>({f.otherName})</em>
-                          </span>
-                        </Typography>
-                      }
-                      color="deep-purple"
-                      defaultChecked={f.id === '1'}
-                      onChange={(v) => {
-                        console.log(v.currentTarget.value)
-                        handleInputChange('folk', v.currentTarget.value)
-                      }}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <div className="relative ">
-                  <input
-                    type="text"
-                    className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                    placeholder="Culture"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+          <ChooseCulture setCulture={handleInputChange} />
           <hr />
           <div className="w-full px-4 pb-4 ml-auto text-gray-500 md:w-1/3">
             <button
