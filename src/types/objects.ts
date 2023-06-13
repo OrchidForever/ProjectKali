@@ -57,7 +57,7 @@ export const objects = [
   },
   {
     id: '15',
-    name: 'tinder',
+    name: 'Tinder',
   },
   {
     id: '16',
@@ -75,4 +75,96 @@ export const objects = [
     id: '19',
     name: 'Flowering staff',
   },
+  {
+    id: '20',
+    name: 'Kalis with a pearl hilt',
+  },
+  {
+    id: '21',
+    name: 'A fishing rod',
+  },
+  {
+    id: '22',
+    name: 'A porcelain jarlet of palm wine'
+  },
+  {
+    id: '23',
+    name: 'A tasseled ceremonial spear'
+  },
+  {
+    id: '24',
+    name: 'City clothing'
+  }, 
+  {
+    id: '25',
+    name: 'A golden ear ornament'
+  },
+  {
+    id: '26',
+    name: 'A rattan rain cape'
+  },
+  {
+    id: '27',
+    name: 'A sash of gold worn across the torso'
+  },
+  {
+    id: '28',
+    name: 'An abaca fiber bag'
+  },
+  {
+    id: '29',
+    name: 'A broad-rimmed hat (salakot)'
+  },
+  {
+    id: '30',
+    name: 'A sword with a shattered blade'
+  },
+  {
+    id: '31',
+    name: 'Spectacles from foreign nations'
+  },
+  {
+    id: '32',
+    name: 'A walking stick'
+  },
+  {
+    id: '33',
+    name: 'A magenta cloak'
+  },
+  {
+    id: '34',
+    name: 'A pouch of tea leaves'
+  },
+  {
+    id: '35',
+    name: 'A golden balance hanging around your neck'
+  },
+  {
+    id: '36',
+    name: 'A push dagger (balaraw)'
+  },
+  {
+    id: '37',
+    name: 'A waist sash of gold'
+  },
+  {
+    id: '38',
+    name: 'Incense sticks,'
+  },
+  {
+    id: '39',
+    name: 'Three jarlets'
+  },
+  {
+    id: '',
+    name: ''
+  },
+  {
+    id: '',
+    name: ''
+  },
+  {
+    id: '',
+    name: ''
+  }
 ]
