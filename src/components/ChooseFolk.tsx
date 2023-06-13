@@ -15,12 +15,12 @@ function ChooseFolk({
         <div>
           <div className="relative py-2 w-max gap-4">
             {folk.map((f, i) => (
-              <React.Fragment key={i}>
+              <React.Fragment key={`${i}_${f.name}_fragment`}>
                 <Radio
                   id={f.name}
                   name="folk"
                   value={f.id}
-                  key={i}
+                  key={`${i}_${f.name}_radio`}
                   label={
                     <Typography>
                       {f.name}{' '}
@@ -36,7 +36,7 @@ function ChooseFolk({
                     setFolk('folk', v.currentTarget.value)
                   }}
                 />
-                <br key={i} />
+                <br key={`${i}_${f.name}_break`} />
               </React.Fragment>
             ))}
           </div>

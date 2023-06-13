@@ -25,12 +25,12 @@ function ChooseCulture({
         <div>
           <div className="relative py-2 w-max gap-4">
             {culture.map((c, i) => (
-              <React.Fragment key={i}>
+              <React.Fragment key={`${i}_${c.name}_fragment`}>
                 <Radio
                   id={c.name}
                   name="culture"
                   value={c.id}
-                  key={i}
+                  key={`${i}_${c.name}_radio`}
                   label={<Typography>{c.name}</Typography>}
                   color="deep-purple"
                   onChange={(v) => {
@@ -40,7 +40,7 @@ function ChooseCulture({
                     )
                   }}
                 />
-                <br key={i} />
+                <br key={`${i}_${c.name}_break`} />
               </React.Fragment>
             ))}
           </div>
@@ -77,19 +77,20 @@ function ChooseCulture({
                 </Typography>
                 <div className="relative ">
                   {culture[parseInt(selectedCulture.id) - 1].subcultures.map((c, i) => (
-                    <React.Fragment key={i}>
+                    <React.Fragment key={`${i}_${c.name}_fragment`}>
                       <Radio
                         id={c.id}
                         name="subculture"
                         value={c.id}
-                        key={i}
-                        label={<Typography>{c.name} <Tooltip content={c.description}><QuestionMarkCircleIcon /></Tooltip></Typography> }
+                        key={`${i}_${c.name}_radio`}
+                        label={<Typography>{c.name} <Tooltip content={c.description}>
+                          <QuestionMarkCircleIcon style={{ display: 'initial' }} className="h-6 w-6 text-gray-500" /></Tooltip></Typography> }
                         color="deep-purple"
                         onChange={(v) => {
                           console.log('subculture', v.currentTarget.value)
                         }}
                       />
-                      <br key={i} />
+                      <br key={`${i}_${c.name}_break`} />
                     </React.Fragment>
                   ))}
                 </div>
