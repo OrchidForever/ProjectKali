@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useEffect } from 'react'
+import React, { type ReactElement, useEffect } from 'react'
 import '../index.css'
 import { Radio, Typography, Tooltip } from '@material-tailwind/react'
 import { culture } from '../types/cultures'
@@ -9,11 +9,7 @@ import {
   QuestionMarkCircleIcon
 } from '@heroicons/react/24/outline'
 
-function ChooseCulture({
-  setCulture
-}: {
-  setCulture: (field: string, value: string | number | playerCharacterCulture | undefined | string[]) => void
-}) {
+function ChooseCulture ({ setCulture }: { setCulture: (field: string, value: string | number | playerCharacterCulture | undefined | string[]) => void }): ReactElement {
   const [selectedCulture, setSelectedCulture] = React.useState<playerCharacterCulture>({
     id: '',
     name: '',
