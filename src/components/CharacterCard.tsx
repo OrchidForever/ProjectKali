@@ -1,20 +1,16 @@
-import React from 'react'
+import React, { type ReactElement } from 'react'
 import {
   Card,
   CardHeader,
   CardBody,
   CardFooter,
-  Typography,
+  Typography
 } from '@material-tailwind/react'
 import type { playerCharacter } from '../types/playerCharacter'
 import { folk } from '../types/folk'
 import { culture } from '../types/cultures'
 
-export default function CharacterCard({
-  character
-}: {
-  character: playerCharacter
-}) {
+export default function CharacterCard ({ character }: { character: playerCharacter }): ReactElement {
   const pcFolk = folk.filter((f) => f.id === character.folk)
   const pcCulture = culture.filter(c => c.id === character.culture.id)
   return (

@@ -12,10 +12,8 @@
   },
   "plugins": ["react"],
   "rules": {
-    "comma-dangle": "off",
-    "@typescript-eslint/comma-dangle": "warn",
-    "eslint-disable-next-line comma-dangle": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/space-before-function-paren": "off"
+    "comma-dangle": ["error"],
+    "no-multi-spaces": ["error"],
+    "quotes": ["error", "single"]
   }
 }

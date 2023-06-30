@@ -6,5 +6,8 @@
     "html.format.indentHandlebars": true,
     "javascript.format.semicolons": "remove",
     "typescript.format.enable": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": ["javascript"]
 }
