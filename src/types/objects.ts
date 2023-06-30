@@ -1,87 +1,87 @@
 export const objects = [
   {
     id: '1',
-    name: 'Crafting tools',
+    name: 'Crafting tools'
   },
   {
     id: '2',
-    name: 'Anvil',
+    name: 'Anvil'
   },
   {
     id: '3',
-    name: 'Bag of trinkets',
+    name: 'Bag of trinkets'
   },
   {
     id: '4',
-    name: 'A Tutubi necklace (Gold necklace that resembles dragonflies)',
+    name: 'A Tutubi necklace (Gold necklace that resembles dragonflies)'
   },
   {
     id: '5',
-    name: 'Flowers and herbs for dyes',
+    name: 'Flowers and herbs for dyes'
   },
   {
     id: '6',
-    name: 'Jade Earrings',
+    name: 'Jade Earrings'
   },
   {
     id: '7',
-    name: "Something you've creates",
+    name: "Something you've creates"
   },
   {
     id: '8',
-    name: 'Pouch of failed inventions',
+    name: 'Pouch of failed inventions'
   },
   {
     id: '9',
-    name: 'Boat lute (kudyapi)',
+    name: 'Boat lute (kudyapi)'
   },
   {
     id: '10',
-    name: 'A bambook flute',
+    name: 'A bambook flute'
   },
   {
     id: '11',
-    name: 'A jaw HArp',
+    name: 'A jaw HArp'
   },
   {
     id: '12',
-    name: 'Palm leaf scrolls',
+    name: 'Palm leaf scrolls'
   },
   {
     id: '13',
-    name: 'Writing implements',
+    name: 'Writing implements'
   },
   {
     id: '14',
-    name: 'Ceremonial staff',
+    name: 'Ceremonial staff'
   },
   {
     id: '15',
-    name: 'Tinder',
+    name: 'Tinder'
   },
   {
     id: '16',
-    name: 'A piece of the sky',
+    name: 'A piece of the sky'
   },
   {
     id: '17',
-    name: 'Ritual deathrope',
+    name: 'Ritual deathrope'
   },
   {
     id: '18',
-    name: 'An adze',
+    name: 'An adze'
   },
   {
     id: '19',
-    name: 'Flowering staff',
+    name: 'Flowering staff'
   },
   {
     id: '20',
-    name: 'Kalis with a pearl hilt',
+    name: 'Kalis with a pearl hilt'
   },
   {
     id: '21',
-    name: 'A fishing rod',
+    name: 'A fishing rod'
   },
   {
     id: '22',
@@ -94,7 +94,7 @@ export const objects = [
   {
     id: '24',
     name: 'City clothing'
-  }, 
+  },
   {
     id: '25',
     name: 'A golden ear ornament'
@@ -154,6 +154,42 @@ export const objects = [
   {
     id: '39',
     name: 'Three jarlets'
+  },
+  {
+    id: '40',
+    name: 'Textile cloak'
+  },
+  {
+    id: '41',
+    name: 'Ceremonial kampilan'
+  },
+  {
+    id: '42',
+    name: 'Dragonfly necklace'
+  },
+  {
+    id: '43',
+    name: 'Obsidian knife'
+  },
+  {
+    id: '44',
+    name: 'Spiritsilk shawl'
+  },
+  {
+    id: '45',
+    name: 'Ironwood kalasag'
+  },
+  {
+    id: '46',
+    name: 'Spear of ice'
+  },
+  {
+    id: '47',
+    name: 'Giant flower petal cloak'
+  },
+  {
+    id: '',
+    name: ''
   },
   {
     id: '',

@@ -18,7 +18,8 @@ interface socialStanding {
   description: string
   bonus: {
     type: string
-    kind: string
+    id: string
+    gender?: string
   }
 }
 
@@ -32,8 +33,8 @@ export interface cultureObject {
   startingObjects?: string[]
   startingObjectPick?: number
   subcultures: subculture[]
-  lineage?: lineage[]
-  socialStanding?: socialStanding[]
+  lineage: lineage[]
+  socialStanding: socialStanding[]
 }
 
 export const culture = [
@@ -64,7 +65,7 @@ export const culture = [
       '13',
       '14',
       '15',
-      '16',
+      '16'
     ],
     startingObjectPick: 2,
     subcultures: [
@@ -74,7 +75,7 @@ export const culture = [
         description:
           'The Isle of Ghosts and Phantasms and undead. A cursed island, any settlement that arises from here is immediately destroyed save for a single harbor principality, named Mantiwmantiw, led by Datu Kinatak, which is said to have created an accord with the death diwata that lives within.\nYou can speak Mantiwanun and start with ritual deathrope.',
         languageBonus: ['Mantiwanun'],
-        objectBonus: ['17'],
+        objectBonus: ['17']
       },
       {
         id: '2',
@@ -189,33 +190,33 @@ export const culture = [
         id: '2',
         name: 'Hayohay or servant',
         description: 'You were indebted or were born into debt of a powerful person, whether it be a famed warrior, merchant, or aristocrat. Your hands are calloused from your work. You begin with a small push dagger.',
-        bonus: { type: 'object', kind: '36' }
+        bonus: { type: 'object', id: '36' }
       },
       {
         id: '3',
         name: 'Tuhay or peasant',
         description: 'You were a loyal worker to your communities\' chief. You had your own house within the community, and offered part of your labor to him. You begin with a farming implement.',
-        bonus: { type: 'weapon', kind: 'farming' }
+        bonus: { type: 'object', id: 'farming' }
       },
       {
         id: '4',
         name: 'Timawa or Warrior',
         description: 'You were a freeman, working as a warrior for the datu that you have chosen.The datu shares their spoils with you, their fellow warriors, and you earn your own house with your own wealth, though you answer to the datu\'s beck and call and sometimes toil for them. Gain a weapon.',
-        bonus: { type: 'weapon', kind: 'any' }
+        bonus: { type: 'weapon', id: 'any' }
       },
       {
         id: '5',
         name: 'Tumao or Aristocrat',
         description: 'You were born into richness, into the blood of the datu of your settlement. You are connected to the datu either through blood or social connections, and enjoy the benefits of nobility. You do not toil for the datu but you must pick up arms when called to battle. You have enjoyed the ability to take on multiple arts. You begin with a golden ear ornament.',
-        bonus: { type: 'object', kind: '25' }
+        bonus: { type: 'object', id: '25' }
       },
       {
         id: '6',
         name: 'Kedatuan or Royalty',
         description: 'You are directly connected to your settlement\'s datu, either the datu is your uncle, grandparent, or parent. You are revered as an Aristocrat, although the expectation for you is much higher. If you are born female then you were treated as a binukot, a veiled maiden, hidden from the rest of the world until you were to be wed to someone your parents decided is fit for their social class. If you are born male you were trained in the arts of war and leadership. You begin with a royal heirloom.',
-        bonus: { gender: 'male', type: 'heirloom', kind: 'any' }
-      },
-    ],
+        bonus: { gender: 'male', type: 'object', id: 'heirloom' }
+      }
+    ]
   },
   {
     id: '2',
@@ -226,26 +227,195 @@ export const culture = [
     keepInMind: 'You are well acquainted with the movements and breaths of harmony. Corrective action must be followed to heal harmony. The spirits prefer the cold, unsalted, and quiet. Scrutinize disharmony. Reprimand those that defile nature.',
     startingObjects: ['26', '21', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39'],
     startingObjectPick: 2,
-    subcultures: [],
-    lineage: [],
-    socialStanding: []
+    subcultures: [
+      {
+        id: '1',
+        name: 'Niyawa',
+        description:
+            'You come from the great Niyawa, the city of strangler fig worship houses, where those that wish are taught in the arts of spirituality and how to achieve Conjunction.The river of Niya runs through it, coming from the cleansing falls that fall from Apu itself. \nYou understand Niyawanun and begin with a textile cloak.',
+        languageBonus: ['Niyawanun'],
+        objectBonus: ['40']
+      },
+      {
+        id: '2',
+        name: 'Samring',
+        description:
+            'You come from grand Samring, principality of Sages, created with five sides to create perpetual Conjunction, those who seek knowledge and teach it to create a better world.They create blacksmiths and administrators, and teach those in the arts of necessary leadership, to lead the world to a place that doesn\'t need it. \nYou can speak Samringnun and begin with palm leaf scrolls.',
+        languageBonus: ['Samringnun'],
+        objectBonus: ['12']
+      },
+      {
+        id: '3',
+        name: 'Pagariwara',
+        description:
+            'You come from majestic Pagariwara, the principality of warlords, where giant spears stake the earth, as if the gods pierced demons deep within the lands. Pagariwaranun achieve Conjunction by perfecting violence so that the violence inflicted is only necessary and not excessive. \nYou can speak Pagariwaranun and begin with a ceremonial kampilan.',
+        languageBonus: ['Pagariwaranun'],
+        objectBonus: ['41']
+      },
+      {
+        id: '4',
+        name: 'Diwangga',
+        description:
+            'You come from ancient Diwangga, once the border of all things, the greater extremities, the nexus of all paths that eventually lead to Apu. Here those willing are taught in the ways of connection, of unity, of concordance.They achieve Conjunction by creating connections between those that would otherwise be enemies.They shall unite the world. \nYou can speak Diwangganun and begin with a dragonfly necklace.',
+        languageBonus: ['Diwangganun'],
+        objectBonus: ['42']
+      },
+      {
+        id: '5',
+        name: 'Usambangsa',
+        description:
+            'You come from Usambangsa.This Kedatuan sits upon Apu itself. Upon the Central Pillar of the World.The city itself is actually mostly empty, but kept spotlessly clean by attendant spirits and a population of 5,000 mortal tawo, who provide stewardship and cleaning. In the middle of it is a great black stone that looks as if the god Apu Dayaw struck the mountain with an obsidian spear. It is said that the stone leads to the sleeping place of Apumbukid himself, a grand city of glittering crystal within The Sword Isles. It is said that They will rise only when The Sword Isles need Them the most. \nYou can speak Usambangsanun and begin with an obsidian knife.',
+        languageBonus: ['Usambangsanun'],
+        objectBonus: ['43']
+      },
+      {
+        id: '6',
+        name: 'Nerakihon',
+        description:
+            'You come from Nerakihon.The settlement of Nerakihon is a large village surrounding a single tree that grows atop the Berumer Mountain.The tree, known as Punung-Neraka, has a hole upon its gigantic trunk that, when entered, sends you plummeting deep into its root systems. Villagers say it sends you straight to Nerak, hell, and that every once in a while a busaw bursts out from the trunk.The villagers have thus created a special force of demon slayers just to protect Nerakihon--and the rest of The Sword Isles-- from the assaults of the otherworlds. \nYou can speak Nerakihonon and begin with a spiritsilk shawl.',
+        languageBonus: ['Nerakihonon'],
+        objectBonus: ['44']
+      },
+      {
+        id: '7',
+        name: 'Sanggasanggsa',
+        description:
+            'You come from Sanggasangga, a warrior city-state. It is a city-state to the furthest west of The Sword Isles, by the base of the mountain of Pinukal. Here, everyone is trained from birth to become a Sentinel against the evil creatures from beyond the mountain barriers, known as the magalo, fae-demons from the Forests Beyond the World. \nWarriors here are trained to be magalo hunters, with the intent of protecting nature and defeating the unnatural. Everyone in Sanggasangga knows full well their responsibility, and carry the burden with pride, always consorting with spirits of the forest, their own guardian spirits, and spirits of war to make sure The Sword Isles is safe. But the tides have become stronger.... \nYou can speak Sanggasangganun and begin with an ironwood kalasag.',
+        languageBonus: ['Sanggasangganun'],
+        objectBonus: ['45']
+      },
+      {
+        id: '8',
+        name: 'Lawahun',
+        description:
+            'You come from Lawahun, the village of frost. A village by the mountain of Wahang, where the Sage of the Mountains lives.The bone-biting cold here requires the warming magics of the Sage. Upon Lawahun, you consort with the wind spirits of the moon, and live side-by-side with ice spirits, surviving and dealing with snow and ice.They engage in ritual headhunting with the state of Vuyu. \nYou can speak Lawahunun and begin with a spear of ice.',
+        languageBonus: ['Lawahunun'],
+        objectBonus: ['46']
+      }
+    ],
+    lineage: [
+      {
+        id: '1',
+        name: 'Ritualist Parents.',
+        description:
+          'Your parents were those that attended and joined and performed ritual killing, whether in revenge or to appease the gods. You have been taught this graceful responsibility, and you must never let it fall into the wrong hands.'
+      },
+      {
+        id: '2',
+        name: 'Makinaadmanon Heritage.',
+        description:
+          'Your parents were Makinaadmanon, the Peerless Sages who chose to teach the ways of Achieving Conjunction instead of transcending the world itself and becoming One with All.They are gone now, but they have left some invaluable insights to you about Ang Hiyang, the divine law of the world.'
+      },
+      {
+        id: '3',
+        name: 'Feast Patrons.',
+        description:
+          'Your parents are wealthy patrons of feasts, most likely aristocrats. You\'ve enjoyed traveling to a great number of settlements to set up feasts, and you\'ve met a large number of people due to it. You have been taught to be kind, always.'
+      },
+      {
+        id: '4',
+        name: 'Servitude.',
+        description:
+          'You come from a family of servants, who serve a noble warrior who treats your family well. You were in essence that warrior\'s squire, carrying their armor and doing their chores. Gain +1 to your Toughness. You cannot begin as an Aristocrat.'
+      },
+      {
+        id: '5',
+        name: 'Elder Balyan.',
+        description:
+          'Your parents were the elder balyan, usually called Katuuran, of your settlement, and they provided guidance in the midst of the chaotic dance of nature, war, and spirituality. You\'ve grown up close to the spiritfolk all your life.'
+      },
+      {
+        id: '6',
+        name: 'Deep Forest Diwata.',
+        description:
+          'You have the blood of diwata, actually. Your parent was a forest guardian. It shows in your eyes, in your mortal form. What peers through? You have never met your parents but they speak to you in your dreams.There\'s a destiny you need to fulfill.'
+      },
+      {
+        id: '7',
+        name: 'Outcast.',
+        description:
+          'You were an outcast, even in your own settlement. However, the folk of various Apumbukid settlements have always taken care of you and provided you some shelter, even if you travel from settlement to settlement trying to find out who you really are and where you\'re from.'
+      },
+      {
+        id: '8',
+        name: 'Warrior Braves.',
+        description:
+          'Your parents were warrior braves who sought to protect the various folks of the Kalanawan region. You are heir to a proud lineage, one who understands the role of violence, and so you have been taught this same very thing. Your family was well respected in your settlement.'
+      }
+    ],
+    socialStanding: [
+      {
+        id: '1',
+        name: 'Bihag or Chattel',
+        description: 'You were the victim of the Eighth Star Era\'s burgeoning violence, and have become nothing but wealth to be traded. You begin with nothing.',
+        bonus: { type: '', id: '' }
+      },
+      {
+        id: '2',
+        name: 'Bayang or servant',
+        description: 'You were indebted or were born into debt of a powerful person, whether it be a famed warrior, merchant, or aristocrat. Your hands are calloused from your work. You begin with a small push dagger.',
+        bonus: { type: 'object', id: '36' }
+      },
+      {
+        id: '3',
+        name: 'Nugkat or peasant',
+        description: 'You were a loyal worker to your communities\' chief. You had your own house within the community, and offered part of your labor to him. You begin with a farming implement.',
+        bonus: { type: 'object', id: 'farming' }
+      },
+      {
+        id: '4',
+        name: 'Kalita-o or Warrior',
+        description: 'You were a freeman, working as a warrior for the datu that you have chosen.The datu shares their spoils with you, their fellow warriors, and you earn your own house with your own wealth, though you answer to the datu\'s beck and call and sometimes toil for them. Gain a weapon.',
+        bonus: { type: 'weapon', id: 'any' }
+      },
+      {
+        id: '5',
+        name: 'Mafengal or Aristocrat',
+        description: 'You were born into richness, into the blood of the datu of your settlement. You are connected to the datu either through blood or social connections, and enjoy the benefits of nobility. You do not toil for the datu but you must pick up arms when called to battle. You have enjoyed the ability to take on multiple arts. Mafengel very commonly use giant flowers, foliage, insect parts, and such as prestigious regaila. You begin with a giant flower petal cloak.',
+        bonus: { type: 'object', id: '47' }
+      },
+      {
+        id: '6',
+        name: 'Datu or Royalty',
+        description: 'You are directly connected to your settlement’s datu, either the datu is your uncle, grandparent, or parent. You are revered as an Aristocrat, although the expectation for you is much higher. If you are born female then you were treated as a binukot, a veiled maiden, hidden from the rest of the world until you were to be wed to someone your parents decided is fit for their social class. If you are born male you were trained in the arts of war and leadership. You begin with a royal heirloom.',
+        bonus: { gender: 'male', type: 'object', id: 'heirloom' }
+      }
+    ]
   },
   {
     id: '3',
     name: 'Akai',
-    naming: '',
+    honorifics: 'Tuan [too-WAN] (General)',
+    naming: ' Akai names are often a single or two words. They share many names with the Rajahnate and with Naksuwarga',
+    exampleNames: 'Asip, Sandayli, Sumandak, Hamba, Buddiman, Akal, Layu, Saliha, Salimin, Maputra, Patima, Bahira, Sawira, Muhaddi, Hinda Hanman, Manalum, Gura, Gumantung, Aliya, Angkala, Hakim, Pakrud, Aisha, Idda',
+    keepInMind: 'You must point out the beauty of a situation. Keep things that must be secret secret. Revel in the striving that must be inflicted for Goddess. Aim always to exalt Goddess. Every thing is a physical reminder of the Goddess\' greatness.',
+    startingObjects: [],
+    startingObjectPick: 0,
     subcultures: [],
+    lineage: []
   },
   {
     id: '4',
     name: 'Virbanwan',
+    honorifics: '',
     naming: '',
+    exampleNames: '',
+    keepInMind: '',
+    startingObjects: [],
+    startingObjectPick: 0,
     subcultures: [],
+    lineage: []
   },
   {
     id: '5',
     name: 'Ba-e',
+    honorifics: '',
     naming: '',
+    exampleNames: '',
+    keepInMind: '',
+    startingObjects: [],
+    startingObjectPick: 0,
     subcultures: [],
-  },
+    lineage: []
+  }
 ]

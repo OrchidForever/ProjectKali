@@ -4,6 +4,7 @@ import { useLocalStorage } from 'usehooks-ts'
 import { useNavigate } from 'react-router-dom'
 import ChooseFolk from '../../components/ChooseFolk'
 import ChooseCulture from '../../components/ChooseCulture'
+import type { playerCharacter, playerCharacterCulture } from '../../types/playerCharacter'
 
 function CreateCharacter() {
   const [playerCharacters, setPlayerCharacters] = useLocalStorage(
@@ -13,20 +14,29 @@ function CreateCharacter() {
   const [character, setCharacter] = useState({
     name: '',
     folk: '1',
-    culture: '',
-    subculture: '',
+    culture: {},
     languages: [],
-    objects: [],
+    objects: []
   })
   const navigate = useNavigate()
 
   const handleInputChange = (
     field: string,
-    value: string | number | undefined
+    value: string | number | playerCharacterCulture | undefined | string[],
+    action?: string
   ): void => {
+    if (action === 'add') {
+      const currentValue = character[field as keyof playerCharacter] as string[]
+      const newValue = [...currentValue, value]
+      setCharacter({
+        ...character,
+        [field]: newValue
+      })
+      return
+    }
     setCharacter({
       ...character,
-      [field]: value,
+      [field]: value
     })
   }
 
